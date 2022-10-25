@@ -85,3 +85,6 @@ class curvas_gausianas():
 def main():
     curva=curvas_gausianas()
     curva.generar_curvas_gausianas()
+
+if __name__ == '__main__':
+    main()

@@ -26,7 +26,6 @@ import pandas as pnd
 
 from datos_cerezas import datos_cerezas
 from datos_albaricoques import datos_albaricoques
-from Visualizacion_3D_curvas_gaussianas import curvas_gausianas
 
 class Datos(datos_cerezas, datos_albaricoques):
 
@@ -47,10 +46,3 @@ class Datos(datos_cerezas, datos_albaricoques):
 
         return frutas_df
 
-def main():
-    curva=curvas_gausianas()
-    curva.generar_curvas_gausianas()
-
-
-if __name__ == '__main__':
-    main()
