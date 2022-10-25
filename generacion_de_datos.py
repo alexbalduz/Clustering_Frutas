@@ -27,7 +27,10 @@ import pandas as pnd
 from datos_cerezas import datos_cerezas
 from datos_albaricoques import datos_albaricoques
 
-class datos:
+class Datos(datos_cerezas, datos_albaricoques):
+
+    def __init__(self):
+        super().__init__(self)
 
     def generar_frutas():
         cerezas=datos_cerezas.generar_cerezas()
@@ -40,4 +43,6 @@ class datos:
         #Guardado de las observaciones en un archivo
         frutas_df = pnd.DataFrame(frutas)
         frutas_df.to_csv("datas/frutas.csv", index=False,header=False)
+
+        return frutas_df
 

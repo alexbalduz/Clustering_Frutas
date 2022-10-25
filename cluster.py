@@ -65,3 +65,22 @@ class Cluster():
             print("¡Es un albaricoque!")
         else:
             print("¡Es una cereza!")
+
+    def mezclas_gaussianas(self):
+        #---- Modelo de mezclas Gaussianas (GMM) -----------
+
+        #Determinación de los clústeres (encontrar 2)
+        gmm = mixture.GaussianMixture(n_components=2)
+
+        #Aprendizaje
+        gmm.fit(self.datos_frutas)
+
+        #Clasificación
+        clusteres = gmm.predict(self.datos_frutas)
+
+        #Visualización de los clústeres
+        plt.scatter(self.datos_frutas.DIAMETRO, self.datos_frutas.PESO, c=clusteres, s=40, cmap='viridis');
+        plt.xlabel("DIAMETRO")
+        plt.ylabel("PESO")
+        plt.show()
+        plt.savefig('fotos/Modelo_mezclas_gaussianas.png')
