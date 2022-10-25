@@ -1,6 +1,6 @@
 import numpy as np
 
-class Cereza:
+class Cereza():
 
     def __init__(self, diametro, peso, cerezas_lista):
         self.cerezas_lista=cerezas_lista
