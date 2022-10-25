@@ -19,7 +19,6 @@ class Cluster():
         self.datos_frutas.plot.scatter(x='DIAMETRO',y='PESO')
         #gaurdamos el plot en un archivo
         plt.show()
-        plt.savefig('fotos/scatter_frutas.png')
 
     def generar_cluster(self):
         #Aprendizaje con el algoritmo K-Mean

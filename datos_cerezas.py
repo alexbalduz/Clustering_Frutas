@@ -12,7 +12,7 @@ class Cereza():
         return f"({self.diametro}) {self.peso}"
 
 class datos_cerezas(Cereza):
-    def __init__(self, diametro, peso, cantidadObservaciones, cerezas_lista):
+    def __init__(self, diametro, peso, cerezas_lista, cantidadObservaciones):
         super().__init__(diametro, peso, cerezas_lista)
         self.cantidadObservaciones=cantidadObservaciones
 
