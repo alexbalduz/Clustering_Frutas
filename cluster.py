@@ -38,3 +38,30 @@ class Cluster():
         plt.scatter(centers[:, 0], centers[:, 1], c='black', s=200, alpha=0.5)
         plt.show()
         plt.savefig('fotos/KMeans_frutas.png')
+
+    def predicciones_kmeans(self):
+        modelo=KMeans(self.num_cluster)
+        modelo.fit(self.datos_frutas)
+        cereza = [[26.98,8.75]]
+        self.numCluster = modelo.predict(cereza)
+        print("Número de clúster de las cerezas: "+ str(self.numCluster))
+
+
+        albaricoque = [[55.7,102.16]]
+        self.numCluster = modelo.predict(albaricoque)
+        print("Número de clúster de los albaricoques: " + str(self.numCluster))
+
+
+        #Instrucciones a adaptar en función de los números de clústeres
+        #determinados con anterioridad:
+
+        if int(self.numCluster)==0:
+            print("¡Es un albaricoque!")
+        else:
+            print("¡Es una cereza! ")
+
+
+        if int(self.numCluster)==0:
+            print("¡Es un albaricoque!")
+        else:
+            print("¡Es una cereza!")
