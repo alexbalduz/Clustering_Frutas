@@ -2,6 +2,15 @@ import numpy as np
 
 class datos_albaricoques:
 
+    def __init__(self,cantidadObservaciones):
+        self.cantidadObservaciones = cantidadObservaciones
+
+
+    def set_albaricoques(self, albaricoques):
+        self.albaricoques=albaricoques
+
+    def get_albaricoques(self):
+        print('Medidas de albaricoques: '+self.albaricoques)
 
 
 

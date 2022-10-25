@@ -2,6 +2,15 @@ import numpy as np
 
 class datos_cerezas:
 
+    def __init__(self,cantidadObservaciones):
+        self.cantidadObservaciones = cantidadObservaciones
+
+    def set_cerezas(self, cereza):
+        self.cereza=cereza
+
+    def get_cerezas(self):
+        print('Medidas de cerezas: '+self.cereza)
+
     def generar_cerezas(self):
         #GENERACION DE LOS DATOS
         # [DIAMETRO, PESO]
