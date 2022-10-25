@@ -32,7 +32,7 @@ class datos_albaricoques(Albaricoque):
         np.random.seed()
         for iteration in range(self.cantidadObservaciones):
             #elección al azar de una característica
-            albaricoque = np.random.choice(caracteristicasAlbaricoques)
+            albaricoque = random.choice(caracteristicasAlbaricoques)
             #Generación de un diámetro
             diametro = np.round(np.random.uniform(albaricoque[0], albaricoque[1]),2)
             #Generación de un peso
@@ -47,4 +47,4 @@ class datos_albaricoques(Albaricoque):
 def main():
     lista_albaricoque=[[22.4,6.42],[58.09,106.06],[20.46,5.98],[28.63,10.85],[17.59,3.58]]
     info_albaricoques=datos_albaricoques(40,44, lista_albaricoque, 4)
-    info_albaricoques.generar_albaricoque
+    info_albaricoques.generar_albaricoques()

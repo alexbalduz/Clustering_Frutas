@@ -1,4 +1,5 @@
 import numpy as np
+import random
 
 class Cereza():
 
@@ -28,14 +29,15 @@ class datos_cerezas(Cereza):
         self.cerezas_lista=[]
         #Generación de las cerezas
         caracteristicasCerezas = [[17,19,1,5],[20,21,5,6],[22,23,6,7],[24,25,7,8.5],[26,27,8.5,10],[28,29,10,11.5]]
+        self.cantidadObservaciones=6
         np.random.seed()
         for iteration in range(self.cantidadObservaciones):
             #elección al azar de una característica
-            cereza = np.random.choice(caracteristicasCerezas)
+            cereza = random.choice(caracteristicasCerezas)
             #Generación de un diámetro
             diametro = np.round(np.random.uniform(cereza[0], cereza[1]),2)
             #Generación de un peso
-            peso = np.round(np.random.uniform(cereza[2], cereza[3]),2)
+            peso = round(np.random.uniform(cereza[2], cereza[3]),2)
             print ("Cereza "+str(iteration)+" "+str(cereza)+" : "+str(diametro)+" - "+str(peso))
             self.cerezas_lista.append([diametro,peso])
 
