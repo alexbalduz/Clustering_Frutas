@@ -1,23 +1,34 @@
 import numpy as np
-
-class datos_albaricoques:
-
-    def __init__(self,cantidadObservaciones):
-        self.cantidadObservaciones = cantidadObservaciones
+import random
 
 
-    def set_albaricoques(self, albaricoques):
-        self.albaricoques=albaricoques
+class Albaricoque:
+
+    def __init__(self, diametro, peso, albaricoques_lista):
+        self.diametro = diametro
+        self.peso = peso
+        self.albaricoques_lista=albaricoques_lista
+
+class datos_albaricoques(Albaricoque):
+
+    def __init__(self, diametro, peso, albaricoques_lista, cantidadObservaciones):
+        super().__init__(diametro, peso, albaricoques_lista)
+        self.cantidadObservaciones=cantidadObservaciones
+
+
+    def set_albaricoques(self, albaricoques_lista):
+        self.albaricoques_lista=albaricoques_lista
 
     def get_albaricoques(self):
-        print('Medidas de albaricoques: '+self.albaricoques)
+        print('Medidas de albaricoques: '+self.albaricoques_lista)
 
 
 
     def generar_albaricoques(self):
         caracteristicasAlbaricoques = [[40,44,41],[45,49,54],[50,54,74],[55,59,100]]
+        self.cantidadObservaciones=4
         #Generación de los albaricoques
-        albaricoques_lista = []
+        self.albaricoques_lista = []
         np.random.seed()
         for iteration in range(self.cantidadObservaciones):
             #elección al azar de una característica
@@ -29,6 +40,6 @@ class datos_albaricoques:
             limiteMaxPeso = albaricoque[2] * 1.10
             peso = round(np.random.uniform(limiteMinPeso, limiteMaxPeso),2)
             print ("Albaricoque "+str(iteration)+" "+str(albaricoque)+" : "+str(diametro)+" - "+str(peso))
-            albaricoques_lista.append([diametro,peso])
+            self.albaricoques_lista.append([diametro,peso])
 
-        return albaricoques_lista
+        return self.albaricoques_lista
