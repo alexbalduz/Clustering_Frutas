@@ -45,4 +45,3 @@ class Datos(datos_cerezas, datos_albaricoques):
         frutas_df.to_csv("datas/frutas.csv", index=False,header=False)
 
         return frutas_df
-

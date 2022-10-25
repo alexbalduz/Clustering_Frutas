@@ -91,6 +91,3 @@ def main():
     cluster_prueba.generar_cluster()
     cluster_prueba.predicciones_kmeans()
     cluster_prueba.mezclas_gaussianas()
-
-if __name__ == '__main__':
-    main()
