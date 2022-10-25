@@ -23,3 +23,21 @@
 #---- IMPORTAR MÓDULOS --
 import random
 import pandas as pnd
+
+from datos_cerezas import datos_cerezas
+from datos_albaricoques import datos_albaricoques
+
+class datos:
+
+    def generar_frutas():
+        cerezas=datos_cerezas.generar_cerezas()
+        albaricoques=datos_albaricoques.generar_albaricoques()
+        #Constitución de las observaciones
+        frutas = cerezas+albaricoques
+        #Mezcla de las observaciones
+        random.shuffle(frutas)
+
+        #Guardado de las observaciones en un archivo
+        frutas_df = pnd.DataFrame(frutas)
+        frutas_df.to_csv("datas/frutas.csv", index=False,header=False)
+
