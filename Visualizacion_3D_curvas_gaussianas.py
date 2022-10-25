@@ -81,3 +81,7 @@ class curvas_gausianas():
         ax.view_init(60, 35)
         plt.show()
         plt.savefig('fotos/curva_gausiana2.png')
+
+def main():
+    curva=curvas_gausianas()
+    curva.generar_curvas_gausianas()

@@ -84,3 +84,13 @@ class Cluster():
         plt.ylabel("PESO")
         plt.show()
         plt.savefig('fotos/Modelo_mezclas_gaussianas.png')
+
+def main():
+    datos_frutas=pd.read_csv('datas/frutas.csv',names=['DIAMETRO','PESO'], header=None )
+    cluster_prueba=Cluster(datos_frutas, 2)
+    cluster_prueba.generar_cluster()
+    cluster_prueba.predicciones_kmeans()
+    cluster_prueba.mezclas_gaussianas()
+
+if __name__ == '__main__':
+    main()

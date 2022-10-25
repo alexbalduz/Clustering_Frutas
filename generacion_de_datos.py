@@ -26,17 +26,18 @@ import pandas as pnd
 
 from datos_cerezas import datos_cerezas
 from datos_albaricoques import datos_albaricoques
+from Visualizacion_3D_curvas_gaussianas import curvas_gausianas
 
 class Datos(datos_cerezas, datos_albaricoques):
 
     def __init__(self):
         super().__init__(self)
 
-    def generar_frutas():
-        cerezas=datos_cerezas.generar_cerezas()
-        albaricoques=datos_albaricoques.generar_albaricoques()
+    def generar_frutas(self):
+        self.cereza=super().generar_cerezas()
+        self.albaricoque=super().generar_albaricoques()
         #Constitución de las observaciones
-        frutas = cerezas+albaricoques
+        frutas = self.cerezas + self.albaricoques
         #Mezcla de las observaciones
         random.shuffle(frutas)
 
@@ -46,3 +47,10 @@ class Datos(datos_cerezas, datos_albaricoques):
 
         return frutas_df
 
+def main():
+    curva=curvas_gausianas()
+    curva.generar_curvas_gausianas()
+
+
+if __name__ == '__main__':
+    main()
