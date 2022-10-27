@@ -10,10 +10,6 @@ class Cluster():
         self.datos_frutas = datos_frutas
         self.num_cluster=num_cluster
 
-    # #leemos los datos
-    # def leer_datos(self):
-    #     self.datos=pd.reaad_csv('datas/frutas.csv',names=['DIAMETRO','PESO'], header=None )
-
     def generar_plot(self):
         #Visualización gráfica de los datos
         self.datos_frutas.plot.scatter(x='DIAMETRO',y='PESO')

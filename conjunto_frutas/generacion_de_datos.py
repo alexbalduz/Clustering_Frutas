@@ -24,13 +24,13 @@
 import random
 import pandas as pnd
 
-from datos_cerezas import datos_cerezas
-from datos_albaricoques import datos_albaricoques
+import cerezas
+import albaricoques
 
-class Datos(datos_cerezas, datos_albaricoques):
+class Datos(cerezas.datos_cerezas, albaricoques.datos_albaricoques):
 
-    def __init__(self):
-        super().__init__(self)
+    def __init__(self, cerezas_lista, albaricoques_lista):
+        super().__init__(self, 2, cerezas_lista, albaricoques_lista)
 
     def generar_frutas(self):
         self.cereza=super().generar_cerezas()
@@ -45,3 +45,9 @@ class Datos(datos_cerezas, datos_albaricoques):
         frutas_df.to_csv("datas/frutas.csv", index=False,header=False)
 
         return frutas_df
+
+def main():
+    conjunto_cerezas= cerezas.main()
+    conjunto_albaricoques= albaricoques.main()
+    conjunto_frutas=Datos(conjunto_cerezas, conjunto_albaricoques)
+    conjunto_frutas.generar_frutas()

@@ -24,8 +24,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.stats as st
 
-from generacion_de_datos import Datos
-
 
 class curvas_gausianas():
 
