@@ -27,8 +27,6 @@ import scipy.stats as st
 
 class curvas_gausianas():
 
-    #constructor de la clase
-    #queda por poner un super de la clase que hereda
     def __init__(self):
         self.datos_frutas = pnd.read_csv("datas/frutas.csv", names=['DIAMETRO','PESO'], header=None)
 
@@ -67,7 +65,7 @@ class curvas_gausianas():
         ax.set_xlabel('X')
         ax.set_ylabel('Y')
         plt.show()
-        plt.savefig('fotos/curva_gausiana1.png')
+        plt.savefig('imagenes_cluster/curva_gausiana1.png')
 
         from mpl_toolkits.mplot3d import axes3d, Axes3D
         fig = plt.figure(figsize=(13, 7))
@@ -78,7 +76,7 @@ class curvas_gausianas():
         fig.colorbar(surf, shrink=0.5, aspect=5) # añadir barra de color indicando el PDF
         ax.view_init(60, 35)
         plt.show()
-        plt.savefig('fotos/curva_gausiana2.png')
+        plt.savefig('imagenes_cluster/curva_gausiana2.png')
 
 def main():
     curva=curvas_gausianas()

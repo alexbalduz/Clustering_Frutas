@@ -32,7 +32,7 @@ class Cluster():
         centers = modelo.cluster_centers_
         plt.scatter(centers[:, 0], centers[:, 1], c='black', s=200, alpha=0.5)
         plt.show()
-        plt.savefig('fotos/KMeans_frutas.png')
+        plt.savefig('imagenes_cluster/KMeans_frutas.png')
 
     def predicciones_kmeans(self):
         modelo=KMeans(self.num_cluster)
@@ -78,7 +78,7 @@ class Cluster():
         plt.xlabel("DIAMETRO")
         plt.ylabel("PESO")
         plt.show()
-        plt.savefig('fotos/Modelo_mezclas_gaussianas.png')
+        plt.savefig('imagenes_cluster/Modelo_mezclas_gaussianas.png')
 
 def main():
     datos_frutas=pd.read_csv('datas/frutas.csv',names=['DIAMETRO','PESO'], header=None )
